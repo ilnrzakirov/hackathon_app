@@ -55,7 +55,7 @@ class StudentAdmin(admin.ModelAdmin):
 
 
 class FeedbackAdmin(admin.ModelAdmin):
-    list_display = ["student", "event", "feedback"]
+    list_display = ["student", "event", "feedback", "description"]
 
 
 class RegisterAdmin(admin.ModelAdmin):

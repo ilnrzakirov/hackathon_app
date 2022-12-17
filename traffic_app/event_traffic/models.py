@@ -66,7 +66,9 @@ class Feedback(models.Model):
     feedback = models.IntegerField(verbose_name="Оценка",
                                    null=False,
                                    blank=False, )
-    description = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True,
+                                   blank=True,
+                                   verbose_name="Текст отзыва")
 
     class Meta:
         verbose_name = "Отзыв"
@@ -88,7 +90,7 @@ class Register(models.Model):
     event_check = models.BooleanField(default=False,
                                       verbose_name="Посетил?")
     link = models.CharField(max_length=500,
-                            verbose_name="Уникальная ссылка для отзыва",
+                            verbose_name="Уникальная ссылка для отслеживания",
                             null=True,
                             blank=True, )
 
