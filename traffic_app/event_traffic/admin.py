@@ -31,7 +31,8 @@ class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
     def get_feedback(self, request, queryset):
         for event in queryset:
             students = Register.objects.filter(event=event)
-            print(students)
+            for student in students:
+                print(student.link)
 
     get_feedback.label = "Попросить отзыв"
     get_feedback.short_descriptions = "Попросить отзыв"

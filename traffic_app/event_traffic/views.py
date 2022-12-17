@@ -23,7 +23,7 @@ def register_to_event(request, pk):
             event = Register.objects.create(student=profile,
                                             event=Event.objects.get(id=pk),
                                             event_check=False,
-                                            link=f"{host}/event/feedback/{profile.id}")
+                                            link=f"{host}event/feedback/{profile.id}")
             qr_code = qrcode.make(event.link)
         else:
             profile = Student.objects.create(name=login,
@@ -39,3 +39,7 @@ def register_to_event(request, pk):
     image = open(filename, "rb")
     response.content = image
     return response
+
+
+def feedback_view(request, pk):
+    return HttpResponse("ok")
