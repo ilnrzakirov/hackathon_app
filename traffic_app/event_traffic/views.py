@@ -4,6 +4,7 @@ from django.http import HttpResponse, FileResponse
 from django.shortcuts import render
 
 # Create your views here.
+from .forms import RegisterForm
 from .models import Student, Register, Event
 
 
@@ -12,7 +13,7 @@ def register_to_event(request, pk):
     event = None
     profile = None
     if request.method == 'POST':
-        login = request.POST["login"]
+        login = request.POST["name"]
         email = request.POST["email"]
         host = config("HOST")
         profile = Student.objects.filter(email=email).first()
@@ -33,12 +34,15 @@ def register_to_event(request, pk):
                                             event_check=False,
                                             link=f"{host}event/check/{profile.id}/{pk}")
             qr_code = qrcode.make(event.link)
-    filename = f"{event.event.name}_{profile.name}_{profile.id}.png"
-    qr_code.save(filename)
-    response = HttpResponse(content_type="image/jpeg")
-    image = open(filename, "rb")
-    response.content = image
-    return response
+        filename = f"{event.event.name}_{profile.name}_{profile.id}.png"
+        qr_code.save(filename)
+        response = HttpResponse(content_type="image/jpeg")
+        image = open(filename, "rb")
+        response.content = image
+        return response
+    else:
+        form = RegisterForm()
+        return render(request, 'register.html', {"form": form})
 
 
 def feedback_view(request, pk):
