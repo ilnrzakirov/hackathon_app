@@ -27,7 +27,7 @@ class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change):
         host = config("HOST")
-        url = f"{host}register_link/{obj.id}"
+        url = f"{host}event/register_link/{obj.id}"
         obj.link = url
         obj.save()
         return super(EventAdmin, self).save_model(request, obj, form, change)
