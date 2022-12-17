@@ -23,7 +23,7 @@ def register_to_event(request, pk):
             event = Register.objects.create(student=profile,
                                             event=Event.objects.get(id=pk),
                                             event_check=False,
-                                            link=f"{host}event/feedback/{profile.id}")
+                                            link=f"{host}event/check/{profile.id}/{pk}")
             qr_code = qrcode.make(event.link)
         else:
             profile = Student.objects.create(name=login,
@@ -31,7 +31,7 @@ def register_to_event(request, pk):
             event = Register.objects.create(student=profile,
                                             event=Event.objects.get(id=pk),
                                             event_check=False,
-                                            link=f"{host}event/feedback/{profile.id}")
+                                            link=f"{host}event/check/{profile.id}/{pk}")
             qr_code = qrcode.make(event.link)
     filename = f"{event.event.name}_{profile.name}_{profile.id}.png"
     qr_code.save(filename)
@@ -43,3 +43,15 @@ def register_to_event(request, pk):
 
 def feedback_view(request, pk):
     return HttpResponse("ok")
+
+
+def check_veiw(request, pk, event):
+    student = Student.objects.get(id=pk)
+    event = Event.objects.get(id=event)
+    register = Register.objects.filter(student=student, event=event).first()
+    if request.user.is_active:
+        register.event_check = True
+        register.save()
+        return HttpResponse("Ok")
+    else:
+        return HttpResponse(event)
