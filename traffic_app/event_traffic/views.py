@@ -4,8 +4,8 @@ from django.http import HttpResponse, FileResponse
 from django.shortcuts import render
 
 # Create your views here.
-from .forms import RegisterForm
-from .models import Student, Register, Event
+from .forms import RegisterForm, FeedbackForm
+from .models import Student, Register, Event, Feedback
 
 
 def register_to_event(request, pk):
@@ -45,8 +45,18 @@ def register_to_event(request, pk):
         return render(request, 'register.html', {"form": form})
 
 
-def feedback_view(request, pk):
-    return HttpResponse("ok")
+def feedback_view(request, pk, event):
+    if request.method == 'POST':
+        event = Event.objects.get(id=request.POST["event"])
+        user = Student.objects.get(id=request.POST["user"])
+        feedback = Feedback.objects.create(event=event,
+                                           student=user,
+                                           feedback=request.POST["feedback"],
+                                           description=request.POST["description"])
+        return HttpResponse("Спасио за отзыв")
+    else:
+        form = FeedbackForm()
+        return render(request, "feedback.html", {"form": form, "user": pk, "event": event})
 
 
 def check_veiw(request, pk, event):

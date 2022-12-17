@@ -29,10 +29,12 @@ class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
 
     @takes_instance_or_queryset
     def get_feedback(self, request, queryset):
+        host = config("HOST")
         for event in queryset:
             students = Register.objects.filter(event=event)
             for student in students:
-                print(student.link)
+                feedback_link = f"{host}event/feedback/{student.student.id}/{student.event.id}"
+                print(feedback_link)
 
     get_feedback.label = "Попросить отзыв"
     get_feedback.short_descriptions = "Попросить отзыв"
