@@ -1,7 +1,7 @@
 from decouple import config
 from django.contrib import admin
 from django.utils.html import format_html
-from django_object_actions import DjangoObjectActions, action
+from django_object_actions import DjangoObjectActions, action, takes_instance_or_queryset
 
 from .models import Event, Student, Feedback, Register
 
@@ -15,6 +15,8 @@ class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
     search_fields = ["name"]
     list_filter = ["type"]
     change_actions = ["action"]
+    changelist_actions = ["get_feedback"]
+    actions = ["get_feedback"]
     change_list_template = "custom_admin/change_list.html"
     change_form_template = "custom_admin/change_form.html"
 
@@ -25,7 +27,17 @@ class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
     def action(self, request, obj):
         pass
 
+    @takes_instance_or_queryset
+    def get_feedback(self, request, queryset):
+        for event in queryset:
+            students = Register.objects.filter(event=event)
+            print(students)
+
+    get_feedback.label = "Попросить отзыв"
+    get_feedback.short_descriptions = "Попросить отзыв"
+
     def save_model(self, request, obj, form, change):
+        obj.save()
         host = config("HOST")
         url = f"{host}event/register_link/{obj.id}"
         obj.link = url

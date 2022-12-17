@@ -17,6 +17,9 @@ def register_to_event(request, pk):
         host = config("HOST")
         profile = Student.objects.filter(email=email).first()
         if profile:
+            use = Register.objects.filter(student=profile, event=Event.objects.get(id=pk)).filter()
+            if use:
+                return HttpResponse("Уже заргеистрированы")
             event = Register.objects.create(student=profile,
                                             event=Event.objects.get(id=pk),
                                             event_check=False,
