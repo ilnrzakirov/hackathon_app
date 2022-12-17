@@ -43,7 +43,8 @@ class Student(models.Model):
                             max_length=100, )
     email = models.EmailField(verbose_name="Email",
                               null=False,
-                              blank=False)
+                              blank=False,
+                              unique=True,)
 
     class Meta:
         verbose_name = "Студент"
