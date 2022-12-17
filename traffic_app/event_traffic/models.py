@@ -27,3 +27,11 @@ class Event(models.Model):
                             blank=True,
                             null=True,
                             max_length=500,)
+
+    class Meta:
+        verbose_name = "Мероприятия"
+        verbose_name_plural = "Мероприятии"
+
+    def __str__(self):
+        return self.name
+
