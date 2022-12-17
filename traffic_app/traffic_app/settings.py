@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
-
+from loguru import logger
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -133,4 +133,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+logger = logger.add("log.log", format="{time}, {level}, {message}", level="INFO", encoding="UTF-8")
 
