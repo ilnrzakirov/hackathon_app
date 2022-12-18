@@ -30,7 +30,7 @@ class Event(models.Model):
 
     class Meta:
         verbose_name = "Мероприятия"
-        verbose_name_plural = "Мероприятии"
+        verbose_name_plural = "Мероприятия"
 
     def __str__(self):
         return self.name
@@ -100,4 +100,3 @@ class Register(models.Model):
 
     def __str__(self):
         return f"{self.student} - {self.event}"
-

@@ -145,3 +145,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 logger = logger.add("log.log", format="{time}, {level}, {message}", level="INFO", encoding="UTF-8")
 
+EMAIL_HOST = config("EMAIL_HOST")
+EMAIL_PORT = config("EMAIL_PORT")
+EMAIL_HOST_USER = config("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = config("EMAIL_USE_TLS")
