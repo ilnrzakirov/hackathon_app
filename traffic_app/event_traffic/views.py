@@ -66,6 +66,6 @@ def check_veiw(request, pk, event):
     if request.user.is_active:
         register.event_check = True
         register.save()
-        return HttpResponse("Ok")
+        return render(request, "staff_page.html", {"event": event, "student": student})
     else:
         return render(request, "event_info.html", {"event": event, "student": student})
