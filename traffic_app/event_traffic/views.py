@@ -21,7 +21,7 @@ def register_to_event(request, pk):
         if profile:
             use = Register.objects.filter(student=profile, event=Event.objects.get(id=pk)).filter()
             if use:
-                return HttpResponse("Уже заргеистрированы")
+                return HttpResponse("Уже зарегистрированы")
             event = Register.objects.create(student=profile,
                                             event=Event.objects.get(id=pk),
                                             event_check=False,
