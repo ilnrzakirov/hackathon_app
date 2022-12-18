@@ -68,4 +68,4 @@ def check_veiw(request, pk, event):
         register.save()
         return HttpResponse("Ok")
     else:
-        return HttpResponse(event)
+        return render(request, "event_info.html", {"event": event, "student": student})
