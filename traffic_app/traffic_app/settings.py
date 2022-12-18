@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-8=iy6&c%czfu8i9cc9@8kmtj26h1(c(yc($cx*b)y=gt05a97u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["51.250.90.228", "127.0.0.1"]
 
 
 # Application definition
@@ -88,6 +88,14 @@ DATABASES = {
         'PORT': config("DB_PORT"),
     },
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'mydatabase', # This is where you put the name of the db file.
+#                  # If one doesn't exist, it will be created at migration time.
+#     }
+# }
 
 
 # Password validation
