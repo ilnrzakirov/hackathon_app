@@ -16,18 +16,11 @@ class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
     list_display = ("name", "link")
     search_fields = ["name"]
     list_filter = ["type"]
-    change_actions = ["action"]
     changelist_actions = ["get_feedback"]
     actions = ["get_feedback"]
     change_list_template = "custom_admin/change_list.html"
     change_form_template = "custom_admin/change_form.html"
 
-    @action(
-        label="This will be the label of the button",
-        description="This will be the tooltip of the button"
-    )
-    def action(self, request, obj):
-        pass
 
     @takes_instance_or_queryset
     def get_feedback(self, request, queryset):

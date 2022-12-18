@@ -9,6 +9,7 @@ from .models import Student, Register, Event, Feedback
 
 
 def register_to_event(request, pk):
+    register_event = Event.objects.get(id=pk)
     qr_code = None
     event = None
     profile = None
@@ -42,7 +43,7 @@ def register_to_event(request, pk):
         return response
     else:
         form = RegisterForm()
-        return render(request, 'register.html', {"form": form})
+        return render(request, 'register.html', {"form": form, "event": register_event})
 
 
 def feedback_view(request, pk, event):
