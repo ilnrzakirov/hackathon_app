@@ -20,7 +20,7 @@ def register_to_event(request, pk):
         if profile:
             use = Register.objects.filter(student=profile, event=Event.objects.get(id=pk)).filter()
             if use:
-                return HttpResponse("Уже заргеистрированы")
+                return HttpResponse("Уже зарегистрированны")
             event = Register.objects.create(student=profile,
                                             event=Event.objects.get(id=pk),
                                             event_check=False,
@@ -53,7 +53,7 @@ def feedback_view(request, pk, event):
                                            student=user,
                                            feedback=request.POST["feedback"],
                                            description=request.POST["description"])
-        return HttpResponse("Спасио за отзыв")
+        return HttpResponse("Спасибо за отзыв")
     else:
         form = FeedbackForm()
         return render(request, "feedback.html", {"form": form, "user": pk, "event": event})
