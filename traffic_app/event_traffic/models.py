@@ -27,6 +27,9 @@ class Event(models.Model):
                             blank=True,
                             null=True,
                             max_length=500, )
+    date = models.DateTimeField(verbose_name="Дата и время",
+                                blank=True,
+                                null=True)
 
     class Meta:
         verbose_name = "Мероприятия"
