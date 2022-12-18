@@ -54,7 +54,7 @@ def feedback_view(request, pk, event):
                                            student=user,
                                            feedback=request.POST["feedback"],
                                            description=request.POST["description"])
-        return HttpResponse("Спасио за отзыв")
+        return HttpResponse("Спасибо за отзыв")
     else:
         form = FeedbackForm()
         return render(request, "feedback.html", {"form": form, "user": pk, "event": event})

@@ -17,10 +17,18 @@ class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
     search_fields = ["name"]
     list_filter = ["type"]
     changelist_actions = ["get_feedback"]
+    change_actions = ["get_visit"]
     actions = ["get_feedback"]
     change_list_template = "custom_admin/change_list.html"
     change_form_template = "custom_admin/change_form.html"
 
+
+    @action(
+        label="Вывести посетителей",
+        description="Отчет о посетителей"
+    )
+    def get_visit(self, request, obj):
+        pass
 
     @takes_instance_or_queryset
     def get_feedback(self, request, queryset):
