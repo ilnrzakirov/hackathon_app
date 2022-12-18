@@ -40,7 +40,6 @@ class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
                           f"Ссылка для отзыва: {feedback_link}",
                           EMAIL_HOST_USER,
                           [student.student.email, ])
-                print(feedback_link)
 
     get_feedback.label = "Попросить отзыв"
     get_feedback.short_descriptions = "Попросить отзыв"
