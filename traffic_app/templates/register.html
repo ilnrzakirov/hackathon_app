@@ -1,121 +1,156 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"> -->
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <title>Регистрация на мероприятие</title>
-  <style type="text/css">
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet"> -->
+      
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+      
+      <title>Регистрация на мероприятие</title>
+      <style type="text/css">
+        
     * {
       box-sizing: border-box;
-    }
+      }
 
     html {
-      font-family: 'Roboto', sans-serif;      
+      font-family: 'Roboto', sans-serif;
     }
     
-    body {
-      margin: 0;
-      background-color: purple;
-      color: black;
-      height: 100vh;
-      display: grid;
-    }
-    
-    h1 {
-      font-weight: 400;
-      font-size: 50px;
-      border: 1px;
-      font-weight: bold;
-      letter-spacing: 3px;
-      line-height: 0 60px;
-      margin-top: 0;
-      /* color: yellow; */
-      /* font-style: ; */
-      /* margin: 0 auto; */
-      /* font-family: 'Lato', sans-serif; */
-      /* font-family: 'Lato', sans-serif; */
-    }
-    
-    /* p {
-      /* font-family: 'Lato', sans-serif; */
-      /* font-size: 38px; */
-    /* }  */
-    
-    .container {
-      margin: auto;
-      padding: 50px;
-      border-radius: 20px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      background-color: white;
-      box-shadow: 5px 5px 3px 1px #3f0563;
-    }
-    
-    .form-reg {
-      height: 300px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-    }
-    
-    input {
-      width: 550px;
-      height: 55px;
-      font-size: 36px;
-      text-align: left;
-      border: 2px black solid;
-      border-radius: 10px;
-      outline: none;
-      padding-left: 10px;
-      box-shadow: 0.5px 1px 1px 1px #544f57;
-    }
-    
-    label {
-      width: 550px;
-      font-size: 32px;
-      color: black;
-      text-align: left;
-      /* padding-left: 50px; */
-    }
+    .body {
+        margin: 0;
+        background: linear-gradient(blue, purple) no-repeat;
+        color: black;
+        height: 100vh;
+        display: grid;
+        width: 100%;
+      }
+      
+      .container {
+        margin: auto;
+        max-width: 800px;
+        width: 80%;
+        padding: 50px;
+        border-radius: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: white;
+        box-shadow: 5px 5px 3px 1px #3f0563;
+      }
 
-    button {
-      background-color: black;
-      color: white;
-      width: 480px;
-      height: 55px;
-      font-size: 32px;
-      border: 0;
-      border-radius: 10px;
-      text-transform: uppercase;
-      margin-top: 20px;
-      box-shadow: 1px 1px 1px 1px #3f0563;
-    }
 
-  </style>
+      h1 {
+        font-weight: 400;
+        font-size: 50px;
+        border: 1px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        line-height: 0 60px;
+        margin-top: 0;
+      }
+      
+      
+      .form-reg {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+      }
+      
+      input {
+        width: 100%;
+        height: 55px;
+        font-size: 20px;
+        text-align: left;
+        border: 2px black solid;
+        border-radius: 10px;
+        outline: none;
+        box-shadow: 0.5px 1px 1px 1px #544f57;
+        max-width: 100%;
+
+      }
+      
+      label {
+        width: 150px;
+        font-size: 20px;
+        color: black;
+        text-align: left;
+        margin-left: -65px;
+      }
+      
+      button {
+        background-color: black;
+        color: white;
+        width: 100%;
+        max-width: 480px;
+        height: 55px;
+        font-size: 32px;
+        border: 0;
+        border-radius: 10px;
+        text-transform: uppercase;
+        margin-top: 20px;
+        box-shadow: 1px 1px 1px 1px #3f0563;
+      }      
+
+      @media (max-width: 768px) {
+        .header {
+          font-size: 30px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          background: linear-gradient(purple, blue);
+        }
+
+        .container {
+          padding: 25px;
+        }
+
+        .header {
+          font-size: 25px;
+          line-height: 1.5;
+          letter-spacing: 1px;
+        }
+
+        .form-reg {
+          height: auto;
+          min-height: 200px;
+        }
+
+        .form-reg input,
+        .form-reg button {
+          width: 100%;
+          max-width: 320px;
+          font-size: 16px;
+        }
+        
+        .form-reg button {
+          font-size: 14px;
+          margin-bottom: 0;
+        }
+      }
+    </style>
   </style>
 </head>
-<body>
+<body class="body">
   <div class="container">
-    <h1>Регистрация <br>на мероприятие</h1>
+    <h1 class="header">Регистрация <br>на мероприятие</h1>
     <!-- <p>Описание мероприятия</p> -->
-    <form method="post" class="form-reg">
+    <form method="post" class="form-reg" >
       {{ form.as_table }}
-      <button type="submit">Зарегистрироваться</button>
+      <button class="btn" type="submit">Зарегистрироваться</button>
     </form>
   </div>
 </body>
