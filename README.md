@@ -1,7 +1,5 @@
 # new_year_app
 
-# new_year_app
-
 ### Запуск: 
 
 ```
