@@ -15,18 +15,21 @@
              background: linear-gradient(blue, purple) no-repeat;
              color: rgb(255, 255, 255);
              height: 100vh;
-             display: grid;
              width: 100%;
              font-family: 'Roboto', sans-serif;
-             font-size: 24px;
+             font-size: 50px;
     }
+
     </style>
 
 
 </head>
 <body>
-    <p>Мероприятие: {{ event.name }}</p>
-    <p>Дата и время: {{ event.date}}</p>
-    <p>Участник: {{ student.name }}</p>
+    <h1>Мероприятие</h1> 
+        <p>{{ event.name }}</p>
+    <h2>Дата и время </h2> 
+        <p>{{ event.date}}</p>
+    <h3>Участник</h3> 
+        <p>{{ student.name }}</p>
 </body>
 </html>

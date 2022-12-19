@@ -15,18 +15,21 @@
              background: linear-gradient(blue, purple) no-repeat;
              color: rgb(255, 255, 255);
              height: 100vh;
-             display: grid;
              width: 100%;
              font-family: 'Roboto', sans-serif;
-             font-size: 24px;
+             font-size: 30px;
     }
     </style>
 
 </head>
 <body>
-    <p>Будем рады видеть вас {{ student.name }}</p>
-    <p>Название мероприятия: {{ event.name }}</p>
-    <p>Дата и время проведения: {{ event.date }}</p>
-    <p>Описание мероприятия: {{ event.description }}</p>
+    <h1>Будем рады видеть вас</h1>
+    <p> {{ student.name }}</p>
+    <h2>Мероприятие </h2>
+    <p>{{ event.name }}</p>
+    <h3>Дата и время</h3>
+    <p>{{ event.date }}</p>
+    <h4>Описание</h4>
+    <p>{{ event.description }}</p>
 </body>
 </html>
