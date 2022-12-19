@@ -71,7 +71,7 @@ class RegisterAdmin(admin.ModelAdmin):
     search_fields = ["student", "event"]
 
 
-admin.site.site_header = "Администриарование мероприятий"
+admin.site.site_header = "Администрирование мероприятий"
 admin.site.register(Event, EventAdmin)
 admin.site.register(Student, StudentAdmin)
 admin.site.register(Feedback, FeedbackAdmin)
