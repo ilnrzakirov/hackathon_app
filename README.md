@@ -6,6 +6,8 @@
 docker build -t new_year .
 docker run -p8000:8000 new_year
 ```
+#### Запуск из папки traffic_app
+
 #### Пройдите на https://localhost:8000
 
 * Добавьте на сайте администратора мероприятие. 
