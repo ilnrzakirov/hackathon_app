@@ -2,7 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
     <title>{{ event.name }}</title>
+
+    <style>
+        body {
+             margin: 0;
+             background: linear-gradient(blue, purple) no-repeat;
+             color: rgb(255, 255, 255);
+             height: 100vh;
+             display: grid;
+             width: 100%;
+             font-family: 'Roboto', sans-serif;
+             font-size: 24px;
+    }
+    </style>
+
 </head>
 <body>
     <p>Будем рады видеть вас {{ student.name }}</p>
