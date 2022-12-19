@@ -7,6 +7,20 @@ docker build -t new_year .
 docker run -p8000:8000 new_year
 ```
 #### Запуск из папки traffic_app
+#### В этой же папке создать файл .env и определить в нем значения
+```
+DB_USER=
+DB_PASS=
+DB_PORT=
+DB_NAME=
+DB_HOST=
+HOST=
+EMAIL_HOST=
+EMAIL_PORT=
+EMAIL_HOST_USER=
+EMAIL_HOST_PASSWORD=
+EMAIL_USE_TLS=
+```
 
 #### Пройдите на https://localhost:8000
 
