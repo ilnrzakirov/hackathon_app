@@ -1,13 +1,7 @@
 # new_year_app
 
-### Запуск: 
-
-```
-docker build -t new_year .
-docker run -p8000:8000 new_year
-```
-#### Запуск из папки traffic_app
-#### В этой же папке создать файл .env и определить в нем значения
+### Запуск из папки traffic_app
+#### В папке создать файл .env и определить в нем значения
 ```
 DB_USER=
 DB_PASS=
@@ -21,7 +15,11 @@ EMAIL_HOST_USER=
 EMAIL_HOST_PASSWORD=
 EMAIL_USE_TLS=
 ```
-
+#### Запуск 
+```
+docker build -t new_year .
+docker run -p8000:8000 new_year
+```
 #### Пройдите на https://localhost:8000
 
 * Добавьте на сайте администратора мероприятие. 
